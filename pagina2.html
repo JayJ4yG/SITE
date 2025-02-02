@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordo Arcana - Missão Iniciada</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            padding: 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .input-box:focus {
+            outline: none;
+            border: 2px solid #00ff00;
+        }
+
+        .morse {
+            font-size: 2em;
+            color: red;
+            text-align: center;
+            white-space: pre-wrap;
+            margin-top: 20px;
+        }
+
+        .no-signal {
+            font-size: 5em;
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parabéns, Investigadores!</h1>
+        <p>Vocês demonstraram grande coragem e inteligência ao superar os desafios que se colocaram à frente. Este é apenas o começo de uma jornada que os levará ao desconhecido e ao extraordinário.</p>
+        <p>Agora, como membros da Ordo Arcana, uma das mais respeitáveis filiais de pesquisas da Ordo Realitas, vocês têm acesso a segredos que muitos só ousam sonhar. Preparem-se para explorar os limites do conhecimento, confrontar o inexplicável e enfrentar o que está oculto nas sombras.</p>
+        <p>A missão de vocês está apenas começando. O desconhecido aguarda sua descoberta.</p>
+
+        <input type="text" class="input-box" id="response" placeholder="Digite sua resposta..." onkeydown="checkResponse(event)">
+    </div>
+
+    <script>
+        function checkResponse(event) {
+            if (event.key === 'Enter') {
+                let response = document.getElementById("response").value.toLowerCase();
+                switch (response) {
+                    case 'ordo arcana':
+                        window.location.href = 'https://example.com/ordo-arcana';  // Substitua pelo link secreto
+                        break;
+                    case 'conhecimento':
+                        window.location.href = 'https://example.com/conhecimento';  // Substitua pelo link secreto
+                        break;
+                    case 'sangue':
+                        window.location.href = 'sangue.html';  // Substitua com o link correto para a página com fundo preto e letras vermelhas
+                        break;
+                    case 'medo':
+                        window.location.href = 'medo.html';  // Substitua com o link correto para a página com fundo preto e letras azul claro
+                        break;
+                    case 'morte':
+                        window.location.href = 'morte.html';  // Substitua com o link correto para a página com fundo branco e letras pretas
+                        break;
+                    case 'energia':
+                        window.location.href = 'energia.html';  // Substitua com o link correto para a página com fundo preto e letras roxas
+                        break;
+                    case 'oculi':
+                        window.location.href = 'https://i.pinimg.com/originals/31/d5/bf/31d5bfbe270a747a29e831a05680e4db.gif';  // Substitua pelo link secreto
+                        break;
+                    case 'elementos':
+                        window.location.href = 'https://i.pinimg.com/originals/14/a6/dc/14a6dcc53d0aeafe50ead389b7cd4474.gif';  // Substitua pelo link secreto
+                        break;
+                    case 'desconhecido':
+                        window.location.href = 'https://www.youtube.com/watch?v=H4dGpz6cnHo';  // Substitua pelo link secreto
+                        break;
+                    case 'deus':
+                        window.location.href = 'https://www.youtube.com/watch?v=q0EpOiu8YkI';  // Substitua pelo link secreto
+                        break;
+                        case 'falso':
+                        window.location.href = 'false.html';  // Substitua pelo link secreto
+                        break;
+                    default:
+                        alert('Resposta desconhecida! Tente novamente.');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem Vindo</title>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet"> <!-- Fonte mais enigmática -->
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace; /* Fonte de máquina de escrever padrão para o corpo */
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        .box {
+            margin: 0 20px;
+        }
+        input {
+            display: block;
+            margin-top: 10px;
+            padding: 5px;
+            text-align: center;
+        }
+        .space {
+            height: 1200px;
+        }
+        footer {
+            font-size: 14px;
+            margin-bottom: 50px;
+        }
+        .highlight {
+            font-weight: normal;
+            color: #0645AD;
+            cursor: pointer;
+        }
+        button {
+            margin-top: 30px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 80px; /* Descer mais imagem */
+        }
+        .image-container img {
+            width: 100px; /* Miniatura */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: block;
+            margin: 0 auto; /* Centralizar imagem */
+        }
+        .image-container img:hover {
+            transform: scale(1.2); /* Aumenta a imagem ao passar o mouse */
+        }
+        .expanded-img {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            z-index: 100;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 99;
+        }
+        .image-1-overlay {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            z-index: 101;
+        }
+        .poema {
+            color: #0645AD; /* Cor azul */
+            font-weight: normal;
+            line-height: 1.5;
+            text-align: center;
+            margin-top: 300px; /* Descer mais o poema */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <input type="text" id="saber" placeholder="Saber">
+        </div>
+        <div class="box">
+            <input type="text" id="poema" placeholder="Poema">
+        </div>
+        <div class="box">
+            <input type="text" id="dg" placeholder="0#DG">
+        </div>
+    </div>
+    <button onclick="validarRespostas()">Verificar</button>
+    
+    <!-- Imagem 1 -->
+    <div class="image-container">
+        <img src="arquivo1.png" alt="Imagem 1" onclick="expandirImagem1()">
+    </div>
+    
+    <!-- Imagens Expandidas -->
+    <div id="overlay" class="overlay" onclick="fecharImagens()"></div>
+    <img id="img1-expand" class="expanded-img" src="arquivo1.png" alt="Imagem 1 Expandida">
+    
+    <!-- Overlay para Imagem 1 -->
+    <img id="img1-overlay" class="image-1-overlay" src="confidencial.png" alt="Imagem Oculta">
+
+    <!-- Poema com cor azul -->
+    <div class="poema">
+        Perdidos em sombras que dançam no véu,<br>
+        Aquele que vê já não é mais o seu.<br>
+        Ruínas sussurram segredos esquecidos,<br>
+        As chamas queimam, mas nunca são vistas.<br>
+        Nos livros selados repousa o temor,<br>
+        O tempo distorce o real e a dor.<br>
+        Recos de vozes que nunca existiram,<br>
+        Mentes que ousam já se despediram.<br>
+        A verdade proíbe, o saber consome,<br>
+        Luzes se apagam ao ouvir seu nome.
+    </div>
+
+    <div class="space"></div>
+    <footer>
+        <span class="highlight" onclick="abrirImagem()">OCULI</span> semper aperta
+    </footer>
+
+    <!-- Música de fundo -->
+    <audio id="musica" loop>
+        <source src="audio.mp3" type="audio/mp3">
+        Seu navegador não suporta a tag de áudio.
+    </audio>
+
+    <script>
+        // Função para tocar a música quando o usuário clicar na página
+        document.body.addEventListener('click', function() {
+            var musica = document.getElementById('musica');
+            musica.play();
+        });
+
+        function validarRespostas() {
+            let saber = document.getElementById("saber").value.toLowerCase();
+            let poema = document.getElementById("poema").value.toLowerCase();
+            let dg = document.getElementById("dg").value.toLowerCase();
+            
+            if (saber === "conhecimento" && poema === "paranormal" && dg === "membrana") {
+                window.location.href = "pagina_secreta.html";
+            } else {
+                alert("Resposta incorreta!");
+            }
+        }
+        
+        function abrirImagem() {
+            window.open("CODIGO.png", "_blank");
+        }
+
+        function expandirImagem1() {
+            document.getElementById('img1-expand').style.display = 'block';
+            document.getElementById('img1-overlay').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function fecharImagens() {
+            document.getElementById('img1-expand').style.display = 'none';
+            document.getElementById('img1-overlay').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

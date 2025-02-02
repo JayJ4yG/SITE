@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Unseen Truth</title>
+  <style>
+    /* Estilos do código permanecem os mesmos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: black;
+      color: #B0B0B0;
+      overflow-x: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .logo h1 {
+      font-size: 3em;
+      color: #00FF00;
+      animation: glitch 2s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px 5px red, -2px -2px 5px blue; }
+      50% { text-shadow: -2px -2px 5px red, 2px 2px 5px blue; }
+      100% { text-shadow: 2px 2px 5px red, -2px -2px 5px blue; }
+    }
+
+    main {
+      margin: 20px;
+      z-index: 10;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #FFFF00;
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      animation: fadein 1s ease-in-out;
+    }
+
+    @keyframes fadein {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .text {
+      font-size: 1.2em;
+      text-align: center;
+      margin-bottom: 20px;
+      animation: textEffect 2s infinite;
+    }
+
+    @keyframes textEffect {
+      0% { transform: scale(1.1); }
+      50% { transform: scale(0.9); }
+      100% { transform: scale(1.1); }
+    }
+
+    .backrooms-video video {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    .false-god-image img {
+      width: 100%;
+      height: auto;
+      filter: blur(2px);
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #FF0000;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2em;
+      animation: buttonShake 1s infinite;
+    }
+
+    @keyframes buttonShake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      50% { transform: translateX(10px); }
+      75% { transform: translateX(-10px); }
+      100% { transform: translateX(0); }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #888;
+      animation: fadeout 3s ease-in-out;
+    }
+
+    @keyframes fadeout {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .link {
+      color: #FF0000;
+      text-decoration: none;
+      font-size: 1.1em;
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      animation: linkEffect 3s infinite;
+    }
+
+    @keyframes linkEffect {
+      0% { text-shadow: 2px 2px 5px red, -2px -2px 5px blue; }
+      50% { text-shadow: -2px -2px 5px red, 2px 2px 5px blue; }
+      100% { text-shadow: 2px 2px 5px red, -2px -2px 5px blue; }
+    }
+
+    #audio {
+      position: fixed;
+      top: -9999px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>The Unseen Truth</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Você Está Aqui Por Uma Razão</h2>
+      <p class="text" id="intro-text">Não foi por acaso que você encontrou este site. Você não está mais no mundo que você conhece...</p>
+    </section>
+
+    <section class="backrooms">
+      <h2>O Que São Os Backrooms?</h2>
+      <p class="text">Eles estão em todos os lugares ao seu redor. Corredores infinitos, espaço sem fim... Um labirinto onde o tempo e a realidade se distorcem.</p>
+      <div class="backrooms-video">
+        <video autoplay muted loop>
+          <source src="backrooms.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <section class="false-god">
+      <h2>O Deus Falso Está Observando</h2>
+      <p class="text">Os deuses não são o que você imagina. Eles são mais antigos do que o tempo. E um, o Falso Deus, aguarda sua chegada.</p>
+      <div class="false-god-image">
+        <img src="falsodeus.jpg" alt="Deus Falso">
+      </div>
+    </section>
+
+    <section class="escape">
+      <h2>Não Tente Escapar</h2>
+      <p class="text">Você não pode fugir. A verdade está aqui, você não pode fechar os olhos agora.</p>
+      <button onclick="window.location.href = 'fuga.html';">Fuja</button>
+    </section>
+
+    <a href="javascript:void(0);" class="link" onclick="goNowhere()">Clique Aqui Para Saber Mais</a>
+
+    <audio id="audio" autoplay loop>
+      <source src="estatica.mp3" type="audio/mpeg">
+    </audio>
+  </main>
+
+  <footer>
+    <p class="footer-text">Você não deveria estar aqui. Volte agora antes que seja tarde demais.</p>
+  </footer>
+
+  <script>
+    // Link para lugar nenhum
+    function goNowhere() {
+      alert("Você não pode escapar...");
+      setTimeout(function() {
+        window.location.reload(); // Traz o usuário de volta ao site
+      }, 1000);
+    }
+
+    // Inicia o áudio quando o usuário clicar em qualquer lugar da página
+    document.body.addEventListener('click', function() {
+      var audio = document.getElementById('audio');
+      if (audio.paused) {
+        audio.play();  // Toca o áudio ao clicar
+      }
+    });
+  </script>
+</body>
+</html>
